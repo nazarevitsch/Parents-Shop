@@ -1,0 +1,106 @@
+#location p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    color: rgb(77, 77, 77);
+    margin: 20px auto 10px 90px;
+}
+
+div#location {
+    vertical-align: middle;
+}
+
+.products {
+    width: 80%;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.card {
+    border: none;
+    margin: 20px auto;
+    box-shadow: none;
+    transition: box-shadow 0.2s linear;
+}
+
+.card:hover {
+    box-shadow: 0px 4px 13px 1px rgba(148, 148, 148, 1);
+}
+
+.card-title {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0.1em;
+    color: #121212;
+    margin: 0;
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    float: right;
+}
+
+.price-col {
+    margin-right: 20px;
+    text-align: right;
+}
+
+.price-col .card-text {
+    opacity: 60%;
+    margin-top: 10px;
+}
+
+.price-col .card-title {
+    margin-top: 10px;
+}
+
+.card-text {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    margin: 0;
+    color: #121212;
+}
+
+.dot {
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 2px;
+}
+
+.sizes p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    display: inline-block;
+    color: #6A6A6A;
+}
+
+h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    line-height: 88px;
+    letter-spacing: 0.3em;
+    text-align: center;
+    color: #121212;
+    margin: 10px;
+}

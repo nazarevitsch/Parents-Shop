@@ -1,0 +1,128 @@
+body {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+}
+
+div#categories {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div#categories h2 {
+  text-align: center;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  letter-spacing: 0.2em;
+}
+
+div#categories h1 {
+  text-align: center;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 54px;
+  ;
+  letter-spacing: 0.2em;
+  line-height: 69px;
+}
+
+div.categorieRow {
+  display: flex;
+  flex-direction: row;
+  width: 75%;
+  margin: auto;
+}
+
+div.categorieRow div {
+  /* margin: 10px; */
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  position: relative;
+  height: 370px;
+  text-align: center;
+  transition: color 0.2s linear;
+}
+
+div.categorieRow div:hover {
+  color: #FAA2A2;
+  cursor: pointer;
+}
+
+div.categorieRow div.big {
+  flex: 4;
+  justify-content: flex-end;
+  height: 370px;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+div.categorieRow div.big h1 {
+  margin: auto 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 100px;
+  letter-spacing: 0.3em;
+  position: absolute;
+  top: 40%
+}
+
+div.categorieRow div.small {
+  flex: 3;
+  height: 370px;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+div.categorieRow div.small h1 {
+  margin: auto;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 100px;
+  letter-spacing: 0.3em;
+  position: absolute;
+  top: 40%;
+}
+
+div.categorieRow div.theBig {
+  height: 370px;
+  background-color: #ffffff;
+  flex: 1;
+  padding: 10px;
+}
+
+div.categorieRow div.theBig h1 {
+  margin: auto;
+  position: absolute;
+  top: 40%;
+}
+
+img.categorie {
+  height: 370px;
+  opacity: 40%;
+  transition: opacity 0.2s linear;
+  object-fit: cover;
+  background-color: #000000
+}
+
+.col-md-7, .col-md-5 {
+  padding: 0;
+  margin: 0;
+}
+
+img.categorie:hover {
+  opacity: 20%;
+}
+
+.no-gutters {
+  margin-right: 0;
+  margin-left: 0;
+}

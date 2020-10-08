@@ -1,0 +1,154 @@
+@media (max-width: 768px) {
+  .miniMedia {
+      display: none;
+  }
+}
+
+
+body {
+  margin: 0;
+}
+
+div.header {
+  width: 100%;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  margin: 0;
+  box-shadow: 0px 40px 50px rgba(0, 0, 0, 0.25);
+}
+
+div#topHeader {
+  background-color: #ffffff;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  margin: 0 auto;
+  height: 50%;
+}
+
+nobr {
+  color: #000000;
+  font-family: Rock Salt;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  text-align: center;
+  margin: 0;
+  vertical-align: middle;
+}
+
+.logo {
+  margin: 0 auto;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  height: 72px;
+}
+
+.miniMedia {
+  position: absolute;
+  top: 22px;
+  right: 80px;
+  margin: auto;
+  font-size: 30px;
+  float: right;
+}
+
+div#headerButtons {
+  display: flex;
+  flex-direction: row;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.sticky {
+  width: 100%;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+.fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.headerButton {
+  background-color: #ffffff;
+  width: 20%;
+  color: #000000;
+  transition: color 0.2s linear;
+}
+
+.headerButton p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  text-align: center;
+  padding: 0;
+  margin: 5px;
+  vertical-align: middle;
+}
+
+.headerButton:hover {
+  color: #FAA2A2;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(255, 255, 255, 0.9);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  height: 0;
+  transition: height 0.5s linear;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 15px 20px;
+  text-decoration: none;
+  display: block;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  text-align: center;
+  transition: color 0.1s linear;
+}
+
+.dropdown-content a:hover {
+  color: #FAA2A2
+}
+
+.dropdown:hover .dropdown-content {
+  display: flex;
+  height: 100px;
+}
+
+.navbar-toggler-icon {
+  color: black;
+}
+
+a.headerButton1 {
+  color: black;
+  text-decoration: none;
+}
+
+.img-wrap {
+  background-color: #000000;
+}

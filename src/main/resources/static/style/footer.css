@@ -1,0 +1,58 @@
+footer {
+  height: 150px;
+  margin-top: 30px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 0%, rgba(38, 38, 38, 1) 100%);
+  box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.25);
+  display: flex;
+}
+
+footer h3 {
+  margin: auto;
+  margin-left: 20px;
+  text-align: left;
+  color: #ffffff;
+  font-family: Raleway;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+}
+
+.rights {
+  color: #ffffff;
+  flex: 3;
+}
+
+footer .logo {
+  flex: 1;
+  height: 150px;
+  text-align: center;
+}
+
+footer p {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  padding: 0;
+  color: #d9d7d6;
+  vertical-align: middle;
+  line-height: 80px;
+}
+
+.media {
+  flex: 1;
+  margin: auto;
+  font-size: 50px;
+  float: right;
+  color: #ffffff;
+}
+
+i{
+  margin: 5px;
+}
+
+i:hover {
+  cursor: pointer;
+}

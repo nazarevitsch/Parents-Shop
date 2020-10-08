@@ -1,0 +1,161 @@
+
+
+h1 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 64px;
+    letter-spacing: 0.3em;
+    text-align: center;
+    margin: 20px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 218px;
+    background: #FFFFFF;
+    border: 1px solid rgba(169, 169, 169, 0.15);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 10px -1px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin: 30px auto;
+}
+
+.item img {
+    width: 180px;
+    object-fit: cover;
+    height: auto;
+    margin: 20px;
+}
+
+h4 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    letter-spacing: 0.1em;
+    margin: 0;
+}
+
+.item p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    margin: 0;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.color {
+    display: flex;
+}
+
+.color-circle {
+    width: 20px;
+    height: 20px;
+    background-color: #CDB2BB;
+    border-radius: 50%;
+    vertical-align: middle;
+    margin: 8px;
+}
+
+.prices {
+    height: 218px;
+    display: flex;
+    justify-content: space-around;
+    flex: 2;
+}
+
+.price-for-one, .amount, .total {
+    text-align: center;
+    margin: auto;
+}
+
+.price-for-one p, .amount p, .total p {
+    font-size: 24px;
+}
+
+.price-for-one h4, .amount h4, .total h4 {
+    font-size: 24px;
+}
+
+.item i {
+    margin: 20px;
+    font-size: 24px;
+}
+
+#big-total {
+    text-align: right;
+    width: 90%;
+    margin: auto;
+}
+
+.order-button {
+    width: 500px;
+    height: 90px;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
+    margin: 40px auto;
+    transition: box-shadow 0.2s linear, background-color 0.2s linear;
+}
+
+.order-button:hover {
+    background-color: #FFF2F2;
+    box-shadow: 0px 4px 12px 4px rgba(0, 0, 0, 0.13);
+}
+
+.order-button p {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    line-height: 90px;
+    letter-spacing: 0.2em;
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+    h4, .price-for-one h4, .amount h4, .total h4, .price-for-one p, .amount p, .total p, .item p  {
+        font-size: 14px;
+    }
+    .prices{
+        flex-direction: column;
+    }
+    .price-for-one, .amount, .total {
+        display: flex;
+        justify-content: flex-start;
+        align-content: flex-start;
+        text-align: left;
+    }
+    .item img{
+        width: 120px;
+    }
+    .order-button{
+        height: 50px;
+        width: 300px;
+    }
+    .order-button p {
+        font-size: 14px;
+        line-height: 50px;
+        letter-spacing: 0.2em;
+        margin: auto;
+    }
+    .color{
+        flex-direction: column;
+    }
+    /* .color-circle{
+        height: 10px;
+        width: 10px;
+    } */
+  }
+

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="../../static/style/cart.css">
+    <link rel="stylesheet" href="../../static/style/header.css">
+    <link rel="stylesheet" href="../../static/style/footer.css">
+    <title>Товари</title>
+</head>
+
+
+<body>
+
+    <div class="header">
+        <div id="topHeader">
+            <div class="logo">
+                <nobr>Logo</nobr>
+            </div>
+            <div class="miniMedia">
+                <i class="fab fa-facebook-square"></i>
+                <i class="fab fa-viber"></i>
+                <i class="fab fa-telegram"></i>
+                <i class="fas fa-phone-square-alt"></i>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar sticky-top navbar-expand-md bg-white navbar-dark" id="headerButtons">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon">
+                <i class="fas fa-bars" style="color: #121212;; font-size:28px;"></i>
+            </span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <a class="headerButton" href="index.html">
+                <p>ГОЛОВНА</p>
+            </a>
+            <div class="dropdown headerButton">
+                <div class="headerButton1" onclick="window.location='products.html'">
+                    <p>КАТЕГОРІЇ</p>
+                </div>
+                <div class="dropdown-content">
+                    <div>
+                        <a href="#">КУРТКИ</a>
+                        <a href="#">ПАЛЬТА</a>
+                    </div>
+                    <div>
+                        <a href="#">ЖАКЕТИ</a>
+                        <a href="#">СВЕТРИ</a>
+                    </div>
+                    <a href="#">ХУТРО</a>
+                </div>
+            </div>
+            <div class="headerButton">
+                <p>ПРО НАС</p>
+            </div>
+            <div class="headerButton">
+                <p>ДОСТАВКА</p>
+            </div>
+            <a class="headerButton" href="cart.html">
+                <p>КОШИК <i class="fas fa-shopping-cart"></i></p>
+            </a>
+        </div>
+    </nav>
+
+    <h1>КОШИК</h1>
+
+    <div class="cart">
+        <div class="item">
+            <img src="https://mangelo.ua/image/cache/catalog/22.02.2020/193pudra-1000x1000.jpg" />
+            <div class="description">
+                <h4>Куртка-пуховик</h4>
+                <div class="color">
+                    <p>Колір: пудра</p>
+                    <div class="color-circle"></div>
+                </div>
+                <p>Розмір: XS</p>
+            </div>
+            <div class="prices">
+                <div class="price-for-one">
+                    <p>Ціна за од.</p>
+                     <h4>1100</h4>
+                </div>
+                <div class="amount">
+                    <p>К-сть</p>
+                     <h4>1</h4>
+                </div>
+                <div class="total">
+                    <h4>Всього</h4>
+                     <h4>1100</h4>
+                </div>
+            </div>
+            <i class="fas fa-times"></i>
+        </div>
+
+        <div class="item">
+            <img src="https://mangelo.ua/image/cache/catalog/22.02.2020/193pudra-1000x1000.jpg" />
+            <div class="description">
+                <h4>Куртка-пуховик</h4>
+                <div class="color">
+                    <p>Колір: пудра</p>
+                    <div class="color-circle"></div>
+                </div>
+                <p>Розмір: XS</p>
+            </div>
+            <div class="prices">
+                <div class="price-for-one">
+                    <p>Ціна за од.</p>
+                     <h4>1100</h4>
+                </div>
+                <div class="amount">
+                    <p>К-сть</p>
+                     <h4>1</h4>
+                </div>
+                <div class="total">
+                    <h4>Всього</h4>
+                     <h4>1100</h4>
+                </div>
+            </div>
+            <i class="fas fa-times"></i>
+        </div>
+
+        <div class="item">
+            <img src="https://mangelo.ua/image/cache/catalog/22.02.2020/193pudra-1000x1000.jpg" />
+            <div class="description">
+                <h4>Куртка-пуховик</h4>
+                <div class="color">
+                    <p>Колір: пудра</p>
+                    <div class="color-circle"></div>
+                </div>
+                <p>Розмір: XS</p>
+            </div>
+            <div class="prices">
+                <div class="price-for-one">
+                    <p>Ціна за од.</p>
+                     <h4>1100</h4>
+                </div>
+                <div class="amount">
+                    <p>К-сть</p>
+                     <h4>1</h4>
+                </div>
+                <div class="total">
+                    <h4>Всього</h4>
+                     <h4>1100</h4>
+                </div>
+            </div>
+            <i class="fas fa-times"></i>
+        </div>
+
+            <h4 id="big-total">Всього до сплати: 3300</h4>
+
+            <div class="order-button">
+                <p>Оформити замовлення</p>
+            </div>
+
+
+    </div>
+
+    <footer class="footer">
+        <div class="logo">
+            <nobr style="color: #ffffff; margin: auto; vertical-align: middle; line-height: 150px;">Logo</nobr>
+        </div>
+        <div class="rights">
+            <p>All rights reserved. 2020®</p>
+        </div>
+        <div class="media">
+            <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-viber"></i>
+            <i class="fab fa-telegram"></i>
+            <i class="fas fa-phone-square-alt"></i>
+        </div>
+    </footer>
+
+</body>
+
+
+<script src="index.js"></script>
+<script src="item.js"></script>
+<script src="https://kit.fontawesome.com/54144e2123.js"></script>
+
+
+</html>
