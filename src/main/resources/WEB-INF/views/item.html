@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -12,9 +12,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <link rel="stylesheet" href="../../static/style/item.css">
-    <link rel="stylesheet" href="../../static/style/header.css">
-    <link rel="stylesheet" href="../../static/style/footer.css">
+    <link rel="stylesheet" th:href="@{/style/item.css}">
+    <link rel="stylesheet" th:href="@{/style/header.css}">
+    <link rel="stylesheet" th:href="@{/style/footer.css}">
     <title>Товари</title>
 </head>
 
@@ -235,8 +235,8 @@
 </body>
 
 
-<script src="index.js"></script>
-<script src="item.js"></script>
+<script th:src="@{js/index.js}"></script>
+<script th:src="@{js/item.js}"></script>
 <script src="https://kit.fontawesome.com/54144e2123.js"></script>
 
 
