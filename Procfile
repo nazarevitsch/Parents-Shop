@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.bida.shop.ShopApplication
+web: java -Dserver.port=8080 -jar target/demo-0.0.1-SNAPSHOT.jar
