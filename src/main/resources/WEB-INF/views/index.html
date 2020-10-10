@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rock+Salt">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
@@ -44,23 +44,23 @@
             </span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <div class="headerButton">
+            <a class="headerButton" th:href="@{/index}">
                 <p>ГОЛОВНА</p>
-            </div>
+            </a>
             <div class="dropdown headerButton">
                 <a class="headerButton1" href="products.html">
                     <p>КАТЕГОРІЇ</p>
                 </a>
                 <div class="dropdown-content">
                     <div>
-                        <a href="#">КУРТКИ</a>
-                        <a href="#">ПАЛЬТА</a>
+                        <a th:href="@{/products}">КУРТКИ</a>
+                        <a th:href="@{/products}">ПАЛЬТА</a>
                     </div>
                     <div>
-                        <a href="#">ЖАКЕТИ</a>
-                        <a href="#">СВЕТРИ</a>
+                        <a th:href="@{/products}">ЖАКЕТИ</a>
+                        <a th:href="@{/products}">СВЕТРИ</a>
                     </div>
-                    <a href="#">ХУТРО</a>
+                    <a th:href="@{/products}">ХУТРО</a>
                 </div>
             </div>
             <div class="headerButton">
@@ -69,7 +69,7 @@
             <div class="headerButton">
                 <p>ДОСТАВКА</p>
             </div>
-            <a class="headerButton" href="cart.html">
+            <a class="headerButton" href="cart">
                 <p>КОШИК <i class="fas fa-shopping-cart"></i></p>
             </a>
         </div>
@@ -87,13 +87,14 @@
                 <a th:href="@{/products}">
                 <div class="big">
                     <div class="img-wrap">
-                        <img class="categorie" th:src="@{images/380473_1.jpg}" />
+                        <img class="categorie" th:src="@{images/380473_1.jpg}"/>
                         <h1>КУРТКИ</h1>
                     </div>
                 </div>
                 </a>
             </div>
             <div class="col-md-5">
+                <a th:href="@{/products}">
                 <div class="small">
                     <div class="img-wrap">
                         <img class="categorie"
@@ -101,34 +102,41 @@
                     </div>
                     <h1>ПАЛЬТА</h1>
                 </div>
+                    </a>
             </div>
         </div>
         <div class="categorieRow row no-gutters">
             <div class="col-md-5">
+                <a th:href="@{/products}">
                 <div class="small">
                     <div class="img-wrap">
                         <img class="categorie" src="https://blog.shafa.ua/wp-content/uploads/2019/04/1.jpg" />
                         <h1 id="font-etalon">ЖАКЕТИ</h1>
                     </div>
                 </div>
+                </a>
             </div>
             <div class="col-md-7">
+                <a th:href="@{/products}">
                 <div class="big">
                     <div class="img-wrap">
                         <img class="categorie" src="https://cutur.ru/wp-content/uploads/_pu/0/02816383.jpg" />
                         <h1>СВЕТРИ</h1>
                     </div>
                 </div>
+                </a>
             </div>
         </div>
         <div class="categorieRow row no-gutters align-items-center justify-content-center">
             <div class="col-12">
+                <a th:href="@{/products}">
                 <div class="theBig">
                     <div class="img-wrap">
                         <img class="categorie" src="https://images.ua.prom.st/2227446562_2227446562.jpg" />
                         <h1>ХУТРО</h1>
                     </div>
                 </div>
+                </a>
             </div>
         </div>
     </div>
