@@ -20,6 +20,7 @@ public class ProductController {
 
     @GetMapping("/products")
     public String getProducts(@RequestParam Long id, Model model){
+        System.out.println(productService.getAllProductsByCategoryId(id));
         model.addAttribute("products", productService.getAllProductsByCategoryId(id));
         model.addAttribute("images", imageService.getAllImagesByProductId(id));
         return "products";
