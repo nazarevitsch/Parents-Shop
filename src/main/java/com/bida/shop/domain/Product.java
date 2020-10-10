@@ -1,8 +1,10 @@
 package com.bida.shop.domain;
 
+import org.hibernate.annotations.Formula;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -15,7 +17,7 @@ public class Product {
     private long id;
 
     @Column(name = "category_id")
-    private long category_id;
+    private long categoryId;
 
     @Column(name = "name")
     private String name;
@@ -33,7 +35,22 @@ public class Product {
     private boolean is_active;
 
     @Column(name = "main_image")
-    private String main_image;
+    private String mainImage;
+
+@OneToMany
+@JoinTable(
+        name="sizes",
+        joinColumns = @JoinColumn( name="product_id"),
+        inverseJoinColumns = @JoinColumn( name="id"))
+    private List<Size> sizes;
+
+    @OneToMany
+    @JoinTable(
+            name="colors",
+            joinColumns = @JoinColumn( name="product_id"),
+            inverseJoinColumns = @JoinColumn( name="id"))
+    private List<Color> colors;
+
 
     public Product(){}
 
@@ -46,11 +63,11 @@ public class Product {
     }
 
     public long getCategory_id() {
-        return category_id;
+        return categoryId;
     }
 
-    public void setCategory_id(long category_id) {
-        this.category_id = category_id;
+    public void setCategoryId(long categoryId) {
+        this.categoryId = categoryId;
     }
 
     public String getName() {
@@ -93,11 +110,43 @@ public class Product {
         this.is_active = is_active;
     }
 
-    public String getMain_image() {
-        return main_image;
+    public String getMainImage() {
+        return mainImage;
     }
 
-    public void setMain_image(String main_image) {
-        this.main_image = main_image;
+    public void setMainImage(String mainImage) {
+        this.mainImage = mainImage;
+    }
+
+    public List<Size> getSizes() {
+        return sizes;
+    }
+
+    public void setSizes(List<Size> sizes) {
+        this.sizes = sizes;
+    }
+
+    public List<Color> getColors() {
+        return colors;
+    }
+
+    public void setColors(List<Color> colors) {
+        this.colors = colors;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", category_id=" + categoryId +
+                ", name='" + name + '\'' +
+                ", price=" + price +
+                ", wholesalePrice=" + wholesalePrice +
+                ", description='" + description + '\'' +
+                ", is_active=" + is_active +
+                ", main_image='" + mainImage + '\'' +
+                ", sizes=" + sizes +
+                ", colors=" + colors +
+                '}';
     }
 }

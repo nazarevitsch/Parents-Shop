@@ -53,14 +53,14 @@
                 </div>
                 <div class="dropdown-content">
                     <div>
-                        <a href="#">КУРТКИ</a>
-                        <a href="#">ПАЛЬТА</a>
+                        <a th:href="@{/products}">КУРТКИ</a>
+                        <a th:href="@{/products}">ПАЛЬТА</a>
                     </div>
                     <div>
-                        <a href="#">ЖАКЕТИ</a>
-                        <a href="#">СВЕТРИ</a>
+                        <a th:href="@{/products}">ЖАКЕТИ</a>
+                        <a th:href="@{/products}">СВЕТРИ</a>
                     </div>
-                    <a href="#">ХУТРО</a>
+                    <a th:href="@{/products}">ХУТРО</a>
                 </div>
             </div>
             <div class="headerButton">
@@ -81,167 +81,178 @@
 
     <h1>КУРТКИ</h1>
 
-
     <div class="products card-deck">
-        <div class="row align-content-center">
+
+<!--        <div class="row align-content-center">-->
+        <th:block th:each="product : ${products}">
             <div class="col-md-4">
-                <a class="card" href="item.html">
+                <a class="card" th:href="'/item?id=' + ${product.getId()}" >
                     <img class="card-img-top"
-                        src="https://mangelo.ua/image/cache/catalog/22.02.2020/193pudra-1000x1000.jpg" alt="Card image">
+                         th:src="'/images/products/' + ${product.getMainImage()}" alt="Card image">  <!-main photo link-->
                     <div class="card-body">
-                        <h4 class="card-title">Куртка-пуховик</h4>
+                        <h4 class="card-title" th:utext="${product.getName()}"></h4> <!--name-->
                         <div class="price">
                             <div class="price-col">
                                 <p class="card-text">різ</p>
                                 <p class="card-text">опт</p>
                             </div>
                             <div class="price-col">
-                                <h4 class="card-title">1100</h4>
-                                <h4 class="card-title">800</h4>
+                                <h4 class="card-title" th:utext="${product.getPrice()}"></h4> <!--price-->
+                                <h4 class="card-title" th:utext="${product.getWholesalePrice()}"></h4>  <!--price_wholesale-->
                             </div>
                         </div>
-                        <p class="card-text">пух</p>
-                        <div class="colors">
-                            <span class="dot" style="background-color: #121212"></span>
-                            <span class="dot" style="background-color: #D9A2DE"></span>
-                            <span class="dot" style="background-color: #BF3030"></span>
+                        <p class="card-text">пух</p> <!--material-->
+
+
+                        <div class="colors"> <!--colors-->
+                            <th:block th:each="color : ${product.getColors()}">
+                                <span class="dot" th:style="'background-color:' + ${color.getColorNumber()}"></span>
+                            </th:block>
                         </div>
-                        <div class="sizes">
-                            <p>XS</p>
-                            <p>S</p>
-                            <p>M</p>
-                            <p>L</p>
+
+                        <div class="sizes"> <!--sizes-->
+                            <th:block th:each="size : ${product.getSizes()}">
+                                <p th:utext="${size.getSize()}"></p>
+                            </th:block>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top"
-                        src="https://mangelo.ua/image/cache/catalog/22.02.2020/205chernyj-720x720.jpg" alt="Card image">
-                    <div class="card-body">
-                        <h4 class="card-title">Куртка-пуховик</h4>
-                        <div class="price">
-                            <div class="price-col">
-                                <p class="card-text">різ</p>
-                                <p class="card-text">опт</p>
-                            </div>
-                            <div class="price-col">
-                                <h4 class="card-title">1100</h4>
-                                <h4 class="card-title">800</h4>
-                            </div>
-                        </div>
-                        <p class="card-text">пух</p>
-                        <div class="colors">
-                            <span class="dot" style="background-color: #121212"></span>
-                            <span class="dot" style="background-color: #D9A2DE"></span>
-                            <span class="dot" style="background-color: #BF3030"></span>
-                        </div>
-                        <div class="sizes">
-                            <p>XS</p>
-                            <p>S</p>
-                            <p>M</p>
-                            <p>L</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top"
-                        src="https://mangelo.ua/image/cache/catalog/22.02.2020/204rozovyj-720x720.jpg" alt="Card image">
-                    <div class="card-body">
-                        <h4 class="card-title">Куртка-пуховик</h4>
-                        <div class="price">
-                            <div class="price-col">
-                                <p class="card-text">різ</p>
-                                <p class="card-text">опт</p>
-                            </div>
-                            <div class="price-col">
-                                <h4 class="card-title">1100</h4>
-                                <h4 class="card-title">800</h4>
-                            </div>
-                        </div>
-                        <p class="card-text">пух</p>
-                        <div class="colors">
-                            <span class="dot" style="background-color: #121212"></span>
-                            <span class="dot" style="background-color: #D9A2DE"></span>
-                            <span class="dot" style="background-color: #BF3030"></span>
-                        </div>
-                        <div class="sizes">
-                            <p>XS</p>
-                            <p>S</p>
-                            <p>M</p>
-                            <p>L</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top"
-                        src="https://mangelo.ua/image/cache/catalog/22.02.2020/203roz.led-720x720.jpg" alt="Card image">
-                    <div class="card-body">
-                        <h4 class="card-title">Куртка-пуховик</h4>
-                        <div class="price">
-                            <div class="price-col">
-                                <p class="card-text">різ</p>
-                                <p class="card-text">опт</p>
-                            </div>
-                            <div class="price-col">
-                                <h4 class="card-title">1100</h4>
-                                <h4 class="card-title">800</h4>
-                            </div>
-                        </div>
-                        <p class="card-text">пух</p>
-                        <div class="colors">
-                            <span class="dot" style="background-color: #121212"></span>
-                            <span class="dot" style="background-color: #D9A2DE"></span>
-                            <span class="dot" style="background-color: #BF3030"></span>
-                        </div>
-                        <div class="sizes">
-                            <p>XS</p>
-                            <p>S</p>
-                            <p>M</p>
-                            <p>L</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top"
-                        src="https://mangelo.ua/image/cache/catalog/22.02.2020/196zheltyj-720x720.jpg" alt="Card image">
-                    <div class="card-body">
-                        <h4 class="card-title">Куртка-пуховик</h4>
-                        <div class="price">
-                            <div class="price-col">
-                                <p class="card-text">різ</p>
-                                <p class="card-text">опт</p>
-                            </div>
-                            <div class="price-col">
-                                <h4 class="card-title">1100</h4>
-                                <h4 class="card-title">800</h4>
-                            </div>
-                        </div>
-                        <p class="card-text">пух</p>
-                        <div class="colors">
-                            <span class="dot" style="background-color: #121212"></span>
-                            <span class="dot" style="background-color: #D9A2DE"></span>
-                            <span class="dot" style="background-color: #BF3030"></span>
-                        </div>
-                        <div class="sizes">
-                            <p>XS</p>
-                            <p>S</p>
-                            <p>M</p>
-                            <p>L</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </th:block>
+
+
+<!--            <div class="col-md-4">-->
+<!--                <div class="card">-->
+<!--                    <img class="card-img-top"-->
+<!--                        src="https://mangelo.ua/image/cache/catalog/22.02.2020/205chernyj-720x720.jpg" alt="Card image">-->
+<!--                    <div class="card-body">-->
+<!--                        <h4 class="card-title">Куртка-пуховик</h4>-->
+<!--                        <div class="price">-->
+<!--                            <div class="price-col">-->
+<!--                                <p class="card-text">різ</p>-->
+<!--                                <p class="card-text">опт</p>-->
+<!--                            </div>-->
+<!--                            <div class="price-col">-->
+<!--                                <h4 class="card-title">1100</h4>-->
+<!--                                <h4 class="card-title">800</h4>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <p class="card-text">пух</p>-->
+<!--                        <div class="colors">-->
+<!--                            <span class="dot" style="background-color: #121212"></span>-->
+<!--                            <span class="dot" style="background-color: #D9A2DE"></span>-->
+<!--                            <span class="dot" style="background-color: #BF3030"></span>-->
+<!--                        </div>-->
+<!--                        <div class="sizes">-->
+<!--                            <p>XS</p>-->
+<!--                            <p>S</p>-->
+<!--                            <p>M</p>-->
+<!--                            <p>L</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-4">-->
+<!--                <div class="card">-->
+<!--                    <img class="card-img-top"-->
+<!--                        src="https://mangelo.ua/image/cache/catalog/22.02.2020/204rozovyj-720x720.jpg" alt="Card image">-->
+<!--                    <div class="card-body">-->
+<!--                        <h4 class="card-title">Куртка-пуховик</h4>-->
+<!--                        <div class="price">-->
+<!--                            <div class="price-col">-->
+<!--                                <p class="card-text">різ</p>-->
+<!--                                <p class="card-text">опт</p>-->
+<!--                            </div>-->
+<!--                            <div class="price-col">-->
+<!--                                <h4 class="card-title">1100</h4>-->
+<!--                                <h4 class="card-title">800</h4>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <p class="card-text">пух</p>-->
+<!--                        <div class="colors">-->
+<!--                            <span class="dot" style="background-color: #121212"></span>-->
+<!--                            <span class="dot" style="background-color: #D9A2DE"></span>-->
+<!--                            <span class="dot" style="background-color: #BF3030"></span>-->
+<!--                        </div>-->
+<!--                        <div class="sizes">-->
+<!--                            <p>XS</p>-->
+<!--                            <p>S</p>-->
+<!--                            <p>M</p>-->
+<!--                            <p>L</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+<!--        <div class="row">-->
+
+<!--            <div class="col-md-4">-->
+<!--                <div class="card">-->
+<!--                    <img class="card-img-top"-->
+<!--                        src="https://mangelo.ua/image/cache/catalog/22.02.2020/203roz.led-720x720.jpg" alt="Card image">-->
+<!--                    <div class="card-body">-->
+<!--                        <h4 class="card-title">Куртка-пуховик</h4>-->
+<!--                        <div class="price">-->
+<!--                            <div class="price-col">-->
+<!--                                <p class="card-text">різ</p>-->
+<!--                                <p class="card-text">опт</p>-->
+<!--                            </div>-->
+<!--                            <div class="price-col">-->
+<!--                                <h4 class="card-title">1100</h4>-->
+<!--                                <h4 class="card-title">800</h4>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <p class="card-text">пух</p>-->
+<!--                        <div class="colors">-->
+<!--                            <span class="dot" style="background-color: #121212"></span>-->
+<!--                            <span class="dot" style="background-color: #D9A2DE"></span>-->
+<!--                            <span class="dot" style="background-color: #BF3030"></span>-->
+<!--                        </div>-->
+<!--                        <div class="sizes">-->
+<!--                            <p>XS</p>-->
+<!--                            <p>S</p>-->
+<!--                            <p>M</p>-->
+<!--                            <p>L</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-4">-->
+<!--                <div class="card">-->
+<!--                    <img class="card-img-top"-->
+<!--                        src="https://mangelo.ua/image/cache/catalog/22.02.2020/196zheltyj-720x720.jpg" alt="Card image">-->
+<!--                    <div class="card-body">-->
+<!--                        <h4 class="card-title">Куртка-пуховик</h4>-->
+<!--                        <div class="price">-->
+<!--                            <div class="price-col">-->
+<!--                                <p class="card-text">різ</p>-->
+<!--                                <p class="card-text">опт</p>-->
+<!--                            </div>-->
+<!--                            <div class="price-col">-->
+<!--                                <h4 class="card-title">1100</h4>-->
+<!--                                <h4 class="card-title">800</h4>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <p class="card-text">пух</p>-->
+<!--                        <div class="colors">-->
+<!--                            <span class="dot" style="background-color: #121212"></span>-->
+<!--                            <span class="dot" style="background-color: #D9A2DE"></span>-->
+<!--                            <span class="dot" style="background-color: #BF3030"></span>-->
+<!--                        </div>-->
+<!--                        <div class="sizes">-->
+<!--                            <p>XS</p>-->
+<!--                            <p>S</p>-->
+<!--                            <p>M</p>-->
+<!--                            <p>L</p>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
     </div>
     </div>
 

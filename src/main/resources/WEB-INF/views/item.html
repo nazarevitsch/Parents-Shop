@@ -53,14 +53,14 @@
                 </div>
                 <div class="dropdown-content">
                     <div>
-                        <a href="#">КУРТКИ</a>
-                        <a href="#">ПАЛЬТА</a>
+                        <a th:href="@{/products}">КУРТКИ</a>
+                        <a th:href="@{/products}">ПАЛЬТА</a>
                     </div>
                     <div>
-                        <a href="#">ЖАКЕТИ</a>
-                        <a href="#">СВЕТРИ</a>
+                        <a th:href="@{/products}">ЖАКЕТИ</a>
+                        <a th:href="@{/products}">СВЕТРИ</a>
                     </div>
-                    <a href="#">ХУТРО</a>
+                    <a th:href="@{/products}">ХУТРО</a>
                 </div>
             </div>
             <div class="headerButton">
@@ -69,7 +69,7 @@
             <div class="headerButton">
                 <p>ДОСТАВКА</p>
             </div>
-            <a class="headerButton" href="cart.html">
+            <a class="headerButton" th:href="@{/cart}">
                 <p>КОШИК <i class="fas fa-shopping-cart"></i></p>
             </a>
         </div>
@@ -102,39 +102,33 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img class="d-block"
-                                src="https://mangelo.ua/image/cache/catalog/22.02.2020/193pudra-1000x1000.jpg"
-                                alt="First slide">
+                                 th:src="'/images/products/' + ${product.getMainImage()}"
+                                 th:alt="${product.getId()}">
                         </div>
+                        <th:block th:each="image : ${images}">
                         <div class="carousel-item">
                             <img class="d-block"
-                                src="https://mangelo.ua/image/cache/catalog/22.02.2020/193pudra1-1000x1000.jpg"
-                                alt="Second slide">
+                                th:src="'/images/products/' + ${image.getImageName()}"
+                                th:alt="${image.getId()}">
                         </div>
-                        <div class="carousel-item">
-                            <img class="d-block"
-                                src="https://mangelo.ua/image/cache/catalog/22.02.2020/193pudra2-1000x1000.jpg"
-                                alt="Third slide">
-                        </div>
+                        </th:block>
                     </div>
-
                 </div>
             </div>
             <div class="col-md-6" style=" height: 600px;">
-                <h4 class="item-name">Куртка-пуховик</h4>
+                <h4 class="item-name" th:utext="${product.getName()}"></h4>
                 <form name="item-buy">
                     <p>Доступні кольори:</p>
                     <div class="colors radio-group">
-                        <div class="radio" data-value="black" style="background-color: black"></div>
-                        <div class="radio" data-value="pink" style="background-color: #D9A2DE"></div>
-                        <div class="radio" data-value="red" style="background-color: #BF3030"></div>
+                        <th:block th:each="colors : ${product.getColors()}">
+                        <div class="radio" data-value="black" th:style="'background-color:' + ${colors.getColorNumber()}"></div>
+                        </th:block>
                     </div>
                     <p>Доступні розміри:</p>
                     <div class="sizes radio-group">
-                        <div class="radio" data-value="black">XS</div>
-                        <div class="radio" data-value="pink">S</div>
-                        <div class="radio" data-value="red">M</div>
-                        <div class="radio" data-value="red">L</div>
-                        <div class="radio" data-value="red">XL</div>
+                        <th:block th:each="sizes : ${product.getSizes()}">
+                        <div class="radio" data-value="black" th:utext="${sizes.getSize()}"></div>
+                        </th:block>
                     </div>
                     <div class="opt">
                         <p>Ростовка:</p>
@@ -146,7 +140,7 @@
                     </div>
                 </form>
                 <div class="cost">
-                    <h4>Вартість: 1100</h4>
+                    <h4 th:utext="${product.getPrice()}"></h4>
                 </div>
                 <div class="cart-button">
                     <p>В кошик <i class="fas fa-shopping-cart"></i></p>
@@ -160,8 +154,7 @@
                     </div>
             <div class="description">
                 <h5>Опис:</h5>
-                <p>Куртка пуховик з накладними карманами. Кармани та внутрішня сторона капюшона виконані в акрилі.
-                    Підкладка. Застібка-блискавка </p>
+                <p th:utext="${product.getDescription()}"></p>
             </div>
             <div class="size-chart">
                 <h5>Розмірна сітка:</h5>
