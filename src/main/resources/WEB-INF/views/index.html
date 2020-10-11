@@ -53,14 +53,14 @@
                 </a>
                 <div class="dropdown-content">
                     <div>
-                        <a th:href="@{/products}">КУРТКИ</a>
-                        <a th:href="@{/products}">ПАЛЬТА</a>
+                        <a th:href="@{'/products?id=1'}">КУРТКИ</a>
+                        <a th:href="@{'/products?id=1'}">ПАЛЬТА</a>
                     </div>
                     <div>
-                        <a th:href="@{/products}">ЖАКЕТИ</a>
-                        <a th:href="@{/products}">СВЕТРИ</a>
+                        <a th:href="@{'/products?id=1'}">ЖАКЕТИ</a>
+                        <a th:href="@{'/products?id=1'}">СВЕТРИ</a>
                     </div>
-                    <a th:href="@{/products}">ХУТРО</a>
+                    <a th:href="@{'/products?id=1'}">ХУТРО</a>
                 </div>
             </div>
             <div class="headerButton">
@@ -69,7 +69,7 @@
             <div class="headerButton">
                 <p>ДОСТАВКА</p>
             </div>
-            <a class="headerButton" href="cart">
+            <a class="headerButton" th:href="@{/cart}">
                 <p>КОШИК <i class="fas fa-shopping-cart"></i></p>
             </a>
         </div>
@@ -94,7 +94,7 @@
                 </a>
             </div>
             <div class="col-md-5">
-                <a th:href="@{/products}">
+                <a th:href="@{'/products?id=1'}">
                 <div class="small">
                     <div class="img-wrap">
                         <img class="categorie"
@@ -107,7 +107,7 @@
         </div>
         <div class="categorieRow row no-gutters">
             <div class="col-md-5">
-                <a th:href="@{/products}">
+                <a th:href="@{'/products?id=1'}">
                 <div class="small">
                     <div class="img-wrap">
                         <img class="categorie" src="https://blog.shafa.ua/wp-content/uploads/2019/04/1.jpg" />
@@ -117,7 +117,7 @@
                 </a>
             </div>
             <div class="col-md-7">
-                <a th:href="@{/products}">
+                <a th:href="@{'/products?id=1'}">
                 <div class="big">
                     <div class="img-wrap">
                         <img class="categorie" src="https://cutur.ru/wp-content/uploads/_pu/0/02816383.jpg" />
@@ -129,7 +129,7 @@
         </div>
         <div class="categorieRow row no-gutters align-items-center justify-content-center">
             <div class="col-12">
-                <a th:href="@{/products}">
+                <a th:href="@{'/products?id=1'}">
                 <div class="theBig">
                     <div class="img-wrap">
                         <img class="categorie" src="https://images.ua.prom.st/2227446562_2227446562.jpg" />

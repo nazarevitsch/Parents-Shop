@@ -44,7 +44,7 @@
             </span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
-            <a class="headerButton" href="index.html">
+            <a class="headerButton" th:href="@{/index}">
                 <p>ГОЛОВНА</p>
             </a>
             <div class="dropdown headerButton">
@@ -53,14 +53,14 @@
                 </div>
                 <div class="dropdown-content">
                     <div>
-                        <a th:href="@{/products}">КУРТКИ</a>
-                        <a th:href="@{/products}">ПАЛЬТА</a>
+                        <a th:href="@{'/products?id=1'}">КУРТКИ</a>
+                        <a th:href="@{'/products?id=1'}">ПАЛЬТА</a>
                     </div>
                     <div>
-                        <a th:href="@{/products}">ЖАКЕТИ</a>
-                        <a th:href="@{/products}">СВЕТРИ</a>
+                        <a th:href="@{'/products?id=1'}">ЖАКЕТИ</a>
+                        <a th:href="@{'/products?id=1'}">СВЕТРИ</a>
                     </div>
-                    <a th:href="@{/products}">ХУТРО</a>
+                    <a th:href="@{'/products?id=1'}">ХУТРО</a>
                 </div>
             </div>
             <div class="headerButton">
