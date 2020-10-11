@@ -121,7 +121,7 @@
                     <p>Доступні кольори:</p>
                     <div class="colors radio-group">
                         <th:block th:each="colors : ${product.getColors()}">
-                        <div class="radio" data-value="black" th:style="'background-color:' + ${colors.getColorNumber()}"></div>
+                        <div class="radio" th:data="${colors.getColorNumber()}" th:style="'background-color:' + ${colors.getColorNumber()}"></div>
                         </th:block>
                     </div>
                     <p>Доступні розміри:</p>
@@ -129,20 +129,20 @@
                         <th:block th:each="sizes : ${product.getSizes()}">
                         <div class="radio" data-value="black" th:utext="${sizes.getSize()}"></div>
                         </th:block>
-                    </div>
-                    <div class="opt">
-                        <p>Ростовка:</p>
-                        <input type="checkbox" />
+                        <div class="radio" data-value="black">РОЗТОВКА</div>
                     </div>
                     <div class="amount">
                         <p>Кількість:</p>
-                        <input type="number" id="item-amount" value="1" />
+                        <input type="number" id="item-amount" min="1" max="10" />
                     </div>
                 </form>
                 <div class="cost">
-                    <h4 th:utext="${product.getPrice()}"></h4>
+                    <h4 id="sp" th:value="${product.getPrice()}" th:utext="${product.getPrice()} + ' грн'"></h4>
                 </div>
-                <div class="cart-button">
+                <div class="cost">
+                    <h4 id="wsp" th:value="${product.getWholesalePrice()}" th:utext="${product.getWholesalePrice()} + ' грн'"></h4>
+                </div>
+                <div class="cart-button" onclick="addToCard()">
                     <p>В кошик <i class="fas fa-shopping-cart"></i></p>
                 </div>
             </div>
@@ -228,6 +228,33 @@
     </footer>
 
 </body>
+
+<script>
+    function addToCard(){
+        let name = document.getElementsByClassName("item-name")[0].innerHTML;
+        let amount = document.getElementById("item-amount").value;
+        let size;
+        let color;
+        let price;
+        for(let i = 0; i < document.getElementsByClassName("colors radio-group")[0].childElementCount; i++){
+            if(document.getElementsByClassName("colors radio-group")[0].children[i].attributes.getNamedItem("class").value === 'radio selected'){
+                color = document.getElementsByClassName("colors radio-group")[0].children[i].attributes.getNamedItem('data').value;
+            }
+        }
+        for(let i = 0; i < document.getElementsByClassName("sizes radio-group")[0].childElementCount; i++){
+            if(document.getElementsByClassName("sizes radio-group")[0].children[i].attributes.getNamedItem("class").value === 'radio selected'){
+                size = document.getElementsByClassName("sizes radio-group")[0].children[i].innerHTML;
+            }
+        }
+        if (size == 'РОЗТОВКА'){
+            price = document.getElementById("wsp").attributes.getNamedItem("value").value;
+        } else {
+            price = document.getElementById("sp").attributes.getNamedItem("value").value;
+        }
+        console.log(window.localStorage.getItem("card"));
+
+    }
+</script>
 
 
 <script th:src="@{js/index.js}"></script>
