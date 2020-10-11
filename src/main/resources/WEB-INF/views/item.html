@@ -101,7 +101,8 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block"
+                            <img id="photoAndId" class="d-block"
+                                 th:value="${product.getId()}"
                                  th:src="'/images/products/' + ${product.getMainImage()}"
                                  th:alt="${product.getId()}">
                         </div>
@@ -133,7 +134,7 @@
                     </div>
                     <div class="amount">
                         <p>Кількість:</p>
-                        <input type="number" id="item-amount" min="1" max="10" />
+                        <input type="number" id="item-amount" min="1" max="10" value="1"/>
                     </div>
                 </form>
                 <div class="cost">
@@ -231,28 +232,35 @@
 
 <script>
     function addToCard(){
-        let name = document.getElementsByClassName("item-name")[0].innerHTML;
-        let amount = document.getElementById("item-amount").value;
-        let size;
-        let color;
-        let price;
+        // window.localStorage.clear();
+        let items = [];
+        let item = new Object();
+        item.randomKey = Math.floor(Math.random() * 999999);
+        item.name = document.getElementsByClassName("item-name")[0].innerHTML;
+        item.amount = document.getElementById("item-amount").value;
+        item.id = document.getElementById("photoAndId").attributes.getNamedItem("value").value;
+        item.image = document.getElementById("photoAndId").src;
         for(let i = 0; i < document.getElementsByClassName("colors radio-group")[0].childElementCount; i++){
             if(document.getElementsByClassName("colors radio-group")[0].children[i].attributes.getNamedItem("class").value === 'radio selected'){
-                color = document.getElementsByClassName("colors radio-group")[0].children[i].attributes.getNamedItem('data').value;
+                item.color = document.getElementsByClassName("colors radio-group")[0].children[i].attributes.getNamedItem('data').value;
             }
         }
         for(let i = 0; i < document.getElementsByClassName("sizes radio-group")[0].childElementCount; i++){
             if(document.getElementsByClassName("sizes radio-group")[0].children[i].attributes.getNamedItem("class").value === 'radio selected'){
-                size = document.getElementsByClassName("sizes radio-group")[0].children[i].innerHTML;
+                item.size = document.getElementsByClassName("sizes radio-group")[0].children[i].innerHTML;
             }
         }
-        if (size == 'РОЗТОВКА'){
-            price = document.getElementById("wsp").attributes.getNamedItem("value").value;
+        if (item.size == 'РОЗТОВКА'){
+            item.price = document.getElementById("wsp").attributes.getNamedItem("value").value;
         } else {
-            price = document.getElementById("sp").attributes.getNamedItem("value").value;
+            item.price = document.getElementById("sp").attributes.getNamedItem("value").value;
         }
+        if (window.localStorage.getItem("card") !== null){
+            items = JSON.parse(window.localStorage.getItem("card"));
+        }
+        items.push(item);
+        localStorage.setItem("card", JSON.stringify(items));
         console.log(window.localStorage.getItem("card"));
-
     }
 </script>
 
