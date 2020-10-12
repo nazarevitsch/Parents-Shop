@@ -247,6 +247,8 @@
             async: false,
             data: JSON.stringify(items)
         })
+        localStorage.removeItem("card");
+        location.reload();
     }
 </script>
 
