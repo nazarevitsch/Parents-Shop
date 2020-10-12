@@ -122,7 +122,7 @@
                     <p>Доступні кольори:</p>
                     <div class="colors radio-group">
                         <th:block th:each="colors : ${product.getColors()}">
-                        <div class="radio" th:data="${colors.getColorNumber()}" th:style="'background-color:' + ${colors.getColorNumber()}"></div>
+                        <div class="radio" th:value="${colors.getColorName()}" th:data="${colors.getColorNumber()}" th:style="'background-color:' + ${colors.getColorNumber()}"></div>
                         </th:block>
                     </div>
                     <p>Доступні розміри:</p>
@@ -243,6 +243,7 @@
         for(let i = 0; i < document.getElementsByClassName("colors radio-group")[0].childElementCount; i++){
             if(document.getElementsByClassName("colors radio-group")[0].children[i].attributes.getNamedItem("class").value === 'radio selected'){
                 item.color = document.getElementsByClassName("colors radio-group")[0].children[i].attributes.getNamedItem('data').value;
+                item.colorName = document.getElementsByClassName("colors radio-group")[0].children[i].attributes.getNamedItem('value').value;
             }
         }
         for(let i = 0; i < document.getElementsByClassName("sizes radio-group")[0].childElementCount; i++){
@@ -260,7 +261,6 @@
         }
         items.push(item);
         localStorage.setItem("card", JSON.stringify(items));
-        console.log(window.localStorage.getItem("card"));
     }
 </script>
 

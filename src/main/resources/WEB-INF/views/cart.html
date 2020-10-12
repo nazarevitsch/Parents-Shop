@@ -143,14 +143,15 @@
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="validationCustom05">№ відділення НП</label>
-                                    <input type="text" class="form-control" id="validationCustom06" required pattern=pattern="[0-9]{1,3}">
+                                    <input type="text" class="form-control" id="validationCustom06" required pattern=pattern="[0-9]{1-3}">
                                     <div class="invalid-feedback">
                                         Буль ласка, введіть дійсний номер відділення НП.
                                     </div>
                                 </div>
                             </div>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Відмінити</button>
-                            <button type="submit" class="btn btn-primary" style="background-color: #FAA2A2; border: none">Оформити замовлення</button>
+                            <button type="button" class="btn btn-primary" style="background-color: #FAA2A2; border: none"
+                            onclick="createOrder()">Оформити замовлення</button>
                         </form>
 
                     </div>
@@ -218,7 +219,6 @@
 
 <script>
     function deleteItem(key){
-        console.log(key);
         items = JSON.parse(localStorage.getItem("card"));
         for(let i = 0; i < items.length; i++){
             if (Number(items[i].randomKey) === Number(key)){
@@ -228,6 +228,25 @@
         }
         localStorage.setItem("card", JSON.stringify(items));
         location.reload();
+    }
+
+    function createOrder() {
+        let items = {"name": document.getElementById("validationCustom01").value,
+            "surName": document.getElementById("validationCustom02").value,
+            "region": document.getElementById("validationCustom03").value,
+            "city": document.getElementById("validationCustom04").value,
+            "phoneNumber": document.getElementById("validationCustom05").value,
+            "newPostNumber": document.getElementById("validationCustom06").value,
+            "items": JSON.parse(localStorage.getItem("card"))
+        };
+        $.ajax({
+            url: "create_order",
+            type: "POST",
+            contentType: 'application/json',
+            dataType: 'json',
+            async: false,
+            data: JSON.stringify(items)
+        })
     }
 </script>
 

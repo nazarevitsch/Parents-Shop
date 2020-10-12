@@ -1,46 +1,31 @@
 package com.bida.shop.domain;
 
-import org.hibernate.annotations.GenericGenerator;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.stereotype.Component;
 
-import javax.persistence.*;
+import java.util.List;
 
-@Entity
-@Table(name = "orders")
-public class Order {
+@Component
+public class OrderFromWeb {
 
-    @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
-    @Column(name = "id")
-    private long id;
-
-    @Column(name = "name")
     private String name;
 
-    @Column(name = "sur_name")
     private String surName;
 
-    @Column(name = "phone_number")
     private String phoneNumber;
 
-    @Column(name = "region")
     private String region;
 
-    @Column(name = "city")
     private String city;
 
-    @Column(name = "new_post_number")
     private int newPostNumber;
 
-    public Order(){}
+    private List<Item> items;
 
-    public long getId() {
-        return id;
+    public OrderFromWeb() {
     }
 
-    public void setId(long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -50,12 +35,28 @@ public class Order {
         this.name = name;
     }
 
+    public String getSurName() {
+        return surName;
+    }
+
+    public void setSurName(String surName) {
+        this.surName = surName;
+    }
+
     public String getPhoneNumber() {
         return phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getRegion() {
+        return region;
+    }
+
+    public void setRegion(String region) {
+        this.region = region;
     }
 
     public String getCity() {
@@ -74,32 +75,24 @@ public class Order {
         this.newPostNumber = newPostNumber;
     }
 
-    public String getSurName() {
-        return surName;
+    public List<Item> getItems() {
+        return items;
     }
 
-    public void setSurName(String surName) {
-        this.surName = surName;
-    }
-
-    public String getRegion() {
-        return region;
-    }
-
-    public void setRegion(String region) {
-        this.region = region;
+    public void setItems(List<Item> items) {
+        this.items = items;
     }
 
     @Override
     public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+        return "OrderFromWeb{" +
+                "name='" + name + '\'' +
                 ", surName='" + surName + '\'' +
-                ", phone_number='" + phoneNumber + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
                 ", region='" + region + '\'' +
                 ", city='" + city + '\'' +
                 ", newPostNumber=" + newPostNumber +
+                ", items=" + items +
                 '}';
     }
 }
